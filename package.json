@@ -64,5 +64,8 @@
   "keywords": [
     "SegmentedControlIOS",
     "react-native"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
