@@ -2,9 +2,9 @@
  * @flow
  */
 
-'use strict';
+'use strict'
 
-import * as React from 'react';
+import * as React from 'react'
 
 import {
   Image,
@@ -13,25 +13,25 @@ import {
   TouchableOpacity,
   View,
   useColorScheme,
-} from 'react-native';
+} from 'react-native'
 
-import type {FontStyle, ViewStyle} from './types';
+import type { FontStyle, ViewStyle } from './types'
 
 type Props = $ReadOnly<{|
   value: string | number | Object,
-  tintColor?: ?string,
-  onSelect: () => void,
-  selected: boolean,
-  enabled: boolean,
-  fontStyle?: FontStyle,
-  activeFontStyle?: FontStyle,
-  tabStyle?: ViewStyle,
-  appearance?: 'dark' | 'light' | null,
-|}>;
+    tintColor ?: ? string,
+    onSelect: () => void,
+      selected: boolean,
+        enabled: boolean,
+          fontStyle ?: FontStyle,
+          activeFontStyle ?: FontStyle,
+          tabStyle ?: ViewStyle,
+          appearance ?: 'dark' | 'light' | null,
+|}>
 
 function isBase64(str) {
-  const regex = /^data:image\/(?:gif|png|jpeg|bmp|webp)(?:;charset=utf-8)?;base64,(?:[A-Za-z0-9]|[+/])+={0,2}/;
-  return str && regex.test(str);
+  const regex = /^data:image\/(?:gif|png|jpeg|bmp|webp)(?:;charset=utf-8)?;base64,(?:[A-Za-z0-9]|[+/])+={0,2}/
+  return str && regex.test(str)
 }
 
 export const SegmentedControlTab = ({
@@ -45,27 +45,27 @@ export const SegmentedControlTab = ({
   appearance,
   tabStyle,
 }: Props): React.Node => {
-  const colorSchemeHook = useColorScheme();
-  const colorScheme = appearance || colorSchemeHook;
-  const {color: textColor, fontSize, fontFamily, fontWeight} = fontStyle;
+  const colorSchemeHook = useColorScheme()
+  const colorScheme = appearance || colorSchemeHook
+  const { color: textColor, fontSize, fontFamily, fontWeight } = fontStyle
 
   const {
     color: activeColor,
     fontSize: activeFontSize,
     fontFamily: activeFontFamily,
     fontWeight: activeFontWeight,
-  } = activeFontStyle;
+  } = activeFontStyle
 
   const getColor = () => {
     if (textColor) {
-      return textColor;
+      return textColor
     }
     if (tintColor) {
-      return 'white';
+      return 'white'
     }
-    return colorScheme === 'dark' ? '#FFF' : '#000';
-  };
-  const color = getColor();
+    return colorScheme === 'dark' ? '#FFF' : '#000'
+  }
+  const color = getColor()
 
   const activeStyle = {
     ...styles.activeText,
@@ -73,36 +73,32 @@ export const SegmentedControlTab = ({
     fontSize: activeFontSize || fontSize,
     color: activeColor || color,
     fontWeight: activeFontWeight || fontWeight || styles.activeText.fontWeight,
-  };
+  }
 
   const idleStyle = {
     color,
     fontSize: fontSize,
     fontFamily: fontFamily,
     fontWeight: fontWeight,
-  };
+  }
 
   return (
     <TouchableOpacity
       style={[styles.container, tabStyle]}
       disabled={!enabled}
       onPress={onSelect}
-      accessibilityState={{selected: selected, disabled: !enabled}}>
+      accessibilityState={{ selected: selected, disabled: !enabled }}>
       <View style={styles.default}>
-        {typeof value === 'number' || typeof value === 'object' ? (
-          <Image source={value} style={styles.segmentImage} />
-        ) : isBase64(value) ? (
-          <Image source={{uri: value}} style={styles.segmentImage} />
-        ) : (
+        {typeof value === 'object' ? value : (
           <Text style={[idleStyle, selected && activeStyle]}>{value}</Text>
         )}
       </View>
     </TouchableOpacity>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
-  container: {flex: 1, borderRadius: 5},
+  container: { flex: 1, borderRadius: 5 },
   default: {
     flex: 1,
     justifyContent: 'center',
@@ -118,4 +114,4 @@ const styles = StyleSheet.create({
     height: 17,
     resizeMode: 'contain',
   },
-});
+})

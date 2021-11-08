@@ -1,4 +1,4 @@
-# `@react-native-segmented-control/segmented-control`
+# `mdc-tindi-custom-segment-control`
 
 ![Supports iOS and Android and Web][support-badge]![Github Action Badge][gha-badge] ![npm][npm-badge] [![Lean Core Extracted][lean-core-badge]][lean-core-issue]
 
@@ -6,7 +6,8 @@ React Native SegmentedControl library. Use SegmentedControl to render a UISegmen
 
 For Android and Web, it has a js implementation that mocks iOS 13 style of UISegmentedControl.
 
-**For Expo Users:** Expo SDK 38 or later is required for this package.
+**For Expo Users:** Expo SDK 38 or later is required for this package.  
+**This is cloned from @react-native-segmented-control/segmented-control**
 
 | iOS                                                                                                                           | Android                                                                                                                       | Web                                                                                                                          |
 | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
