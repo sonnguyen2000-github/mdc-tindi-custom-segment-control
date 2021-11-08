@@ -1,7 +1,7 @@
 {
-  "name": "@react-native-segmented-control/segmented-control",
-  "version": "2.4.0",
-  "description": "React Native SegmentedControlIOS library",
+  "name": "mdc-tindi-custom-segment-control",
+  "version": "1.0.0",
+  "description": "Custom React Native SegmentedControlIOS library, clone and change from @react-native-segmented-control/segmented-control",
   "main": "js/index.js",
   "types": "index.d.ts",
   "files": [
@@ -61,21 +61,8 @@
       "<rootDir>/jest.setup.js"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/react-native-segmented-control/segmented-control.git"
-  },
   "keywords": [
     "SegmentedControlIOS",
     "react-native"
-  ],
-  "author": "M.Haris Baig",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/react-native-segmented-control/segmented-control/issues"
-  },
-  "homepage": "https://github.com/react-native-segmented-control/segmented-control#readme",
-  "publishConfig": {
-    "access": "public"
-  }
+  ]
 }
