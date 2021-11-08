@@ -51,7 +51,7 @@ export type SegmentedControlProps = $ReadOnly<{|
   /**
    * The labels for the control's segment buttons, in order.
    */
-  values: $ReadOnlyArray<string | Object>,
+  values: $ReadOnlyArray<string | Object | Function>,
   /**
    * The index in `props.values` of the segment to be (pre)selected.
    */

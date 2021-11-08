@@ -29,10 +29,10 @@ type Props = $ReadOnly<{|
           appearance ?: 'dark' | 'light' | null,
 |}>
 
-function isBase64(str) {
-  const regex = /^data:image\/(?:gif|png|jpeg|bmp|webp)(?:;charset=utf-8)?;base64,(?:[A-Za-z0-9]|[+/])+={0,2}/
-  return str && regex.test(str)
-}
+  function isBase64(str) {
+    const regex = /^data:image\/(?:gif|png|jpeg|bmp|webp)(?:;charset=utf-8)?;base64,(?:[A-Za-z0-9]|[+/])+={0,2}/
+    return str && regex.test(str)
+  }
 
 export const SegmentedControlTab = ({
   onSelect,
@@ -89,9 +89,10 @@ export const SegmentedControlTab = ({
       onPress={onSelect}
       accessibilityState={{ selected: selected, disabled: !enabled }}>
       <View style={styles.default}>
-        {typeof value === 'object' ? value : (
-          <Text style={[idleStyle, selected && activeStyle]}>{value}</Text>
-        )}
+        {typeof value === 'object' ? value :
+          typeof value === 'function' ? value({ selected }) : (
+            <Text style={[idleStyle, selected && activeStyle]}>{value}</Text>
+          )}
       </View>
     </TouchableOpacity>
   )
