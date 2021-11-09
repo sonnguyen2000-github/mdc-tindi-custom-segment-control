@@ -32,7 +32,7 @@
     "@react-native-community/eslint-config": "^3.0.0",
     "@semantic-release/git": "^8.0.0",
     "@types/react": "^17.0.0",
-    "@types/react-native": "^0.64.4",
+    "@types/react-native": "^0.66.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.0.1",
     "babel-preset-expo": "^8.2.1",
@@ -78,5 +78,5 @@
   "bugs": {
     "url": "https://github.com/sonnguyen2000-github/mdc-tindi-custom-segment-control/issues"
   },
-  "homepage": "https://github.com/sonnguyen2000-github/mdc-tindi-custom-segment-control#readme",
+  "homepage": "https://github.com/sonnguyen2000-github/mdc-tindi-custom-segment-control#readme"
 }
